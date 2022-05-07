@@ -5,6 +5,7 @@ using Application.Files;
 using Application.Interfaces;
 using Application.INTERFACES;
 using Application.Locations;
+using Application.Notifications;
 using Application.Users;
 using Domain;
 using Infrastructure.Security;
@@ -176,6 +177,7 @@ namespace SpiderJob
             services.AddScoped<IEmail, Email>();
             services.AddScoped<IAuthentication, Authentication>();
             services.AddScoped<ICRUD<LocationDto, LocationSearchRequest, LocationInsertRequest, LocationUpsertRequest>, Locations>();
+            services.AddScoped<ICRUD<NotificationDto, NotificationSearchRequest, NotificationInsertRequest, NotificationInsertRequest>, Notifications>();
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<ICRUDP<UsersDto, object, object, UserUpsertRequest, UserPatchDto>, Users>();
             services.AddScoped<IUser, Users>();

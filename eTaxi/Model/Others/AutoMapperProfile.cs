@@ -12,33 +12,36 @@ namespace Model.Others
     {
         public AutoMapperProfile()
         {
+            //Locations
             CreateMap<Location, LocationDto>().ReverseMap();
             CreateMap<Location, LocationUpsertRequest>().ReverseMap();
             CreateMap<Location, LocationInsertRequest>().ReverseMap();
             CreateMap<Location, LocationSearchRequest>().ReverseMap();
+            CreateMap<LocationBasic, Location>().ReverseMap();
+
+            //User
             CreateMap<ApplicationUser, ApplicationUserRequest>().ReverseMap();
             CreateMap<ApplicationUser, LoginModel>().ReverseMap();
-            CreateMap<Register, RegisterModel>().ReverseMap();
             CreateMap<ApplicationUser, UsersDto>().ReverseMap();
             CreateMap<ApplicationUser, UserPatchDto>().ReverseMap();
-
             CreateMap<ApplicationUser, UserUpsertRequest>().ReverseMap();
-
             CreateMap<ApplicationUser, UsersDto>().ReverseMap();
             CreateMap<ApplicationUserNames, ApplicationUser>().ReverseMap();
+            CreateMap<UserBasic, ApplicationUser>().ReverseMap();
+            CreateMap<UserProfile, ApplicationUser>().ReverseMap();
+            CreateMap<Register, RegisterModel>().ReverseMap();
 
-
+            //Files
             CreateMap<FileDto, File>().ReverseMap();
             CreateMap<FileUpsert, File>().ReverseMap();
             CreateMap<FileInsert, File>().ReverseMap();
+            CreateMap<FileBasic, File>().ReverseMap();
 
-          
+            //Notification
+            CreateMap<NotificationDto, Notification>().ReverseMap();
+            CreateMap<NotificationInsertRequest, Notification>().ReverseMap();
 
            
-            CreateMap<UserBasic, ApplicationUser>().ReverseMap();
-            CreateMap<UserProfile, ApplicationUser>().ReverseMap();
-            CreateMap<LocationBasic, Location>().ReverseMap();
-            CreateMap<FileBasic, File>().ReverseMap();
         }
     }
 }
