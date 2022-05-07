@@ -9,6 +9,7 @@ namespace Domain
         public Order()
         {
             IsActive = true;
+            OrderCreatedTime = DateTime.Now;
         }
 
         public int OrderId { get; set; }

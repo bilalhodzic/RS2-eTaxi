@@ -5,6 +5,7 @@ using Application.Files;
 using Application.Interfaces;
 using Application.INTERFACES;
 using Application.Locations;
+using Application.Favorites;
 using Application.Notifications;
 using Application.Users;
 using Domain;
@@ -22,14 +23,29 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Model.Dto;
+using Model.Dto.Favorites;
 using Model.Dto.Users;
 using Model.Others;
 using Model.Requests;
+using Model.Requests.Favorites;
 using Newtonsoft.Json.Serialization;
 using Persistence;
 using System;
 using System.IO;
 using System.Text;
+using Model.Dto.Order;
+using Model.Requests.Orders;
+using Application.Orders;
+using Model.Dto.Rate;
+using Model.Requests.Rate;
+using Application.Rates;
+using Model.Dto.Rating;
+using Model.Requests.Rating;
+using Application.Ratings;
+using Model.Dto.Vehicle;
+using Model.Requests.Vehicle;
+using Application.Vehicles;
+using Application.VehicleTypes;
 
 namespace SpiderJob
 {
@@ -183,6 +199,17 @@ namespace SpiderJob
             services.AddScoped<IUser, Users>();
             services.AddScoped<ICRUD<FileDto, FileSearchRequest, FileInsert, FileUpsert>, Files>();
             services.AddScoped<IAdmin, Admins>();
+            services.AddScoped<ICRUD<FavoritesDto, FavoritesSearchRequest, FavoritesInsertRequest, FavoritesInsertRequest>, Favorites>();
+            services.AddScoped<ICRUD<OrderDto, OrderSearchRequest, OrderInsertRequest, OrderUpsertRequest>, Orders>();
+            services.AddScoped<ICRUD<RateDto, RateSearchRequest, RateInsertRequest, object>, Rates>();
+            services.AddScoped<ICRUD<RatingDto, RatingSearchRequest, RatingInsertRequest, object>, Ratings>();
+            services.AddScoped<ICRUD<VehicleDto, VehicleSearchRequest, VehicleInsertRequest, VehicleUpsertRequest>, Vehicles>();
+            services.AddScoped<ICRUD<VehicleTypeDto, VehicleTypeSearchRequest, VehicleTypeInsertRequest, object>, VehicleTypes>();
+
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

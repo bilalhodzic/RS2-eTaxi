@@ -18,7 +18,7 @@ namespace Persistence
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public virtual DbSet<File> Files { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<Favorites> Favorites { get; set; }
+        public virtual DbSet<Favorite> Favorites { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Rate> Rates { get; set; }

@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain
+namespace Model.Requests.Favorites
 {
-    public partial class Favorites
+    public class FavoritesSearchRequest
     {
-        public int FavoritesId { get; set; }
         public int UserId { get; set; }
         public int CompanyId { get; set; }
-
-        public virtual ApplicationUser User { get; set; }
     }
 }

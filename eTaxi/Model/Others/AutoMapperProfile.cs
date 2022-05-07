@@ -1,10 +1,20 @@
 ﻿using AutoMapper;
 using Domain;
 using Model.Dto;
+using Model.Dto.Favorites;
 using Model.Dto.Files;
 using Model.Dto.Location;
+using Model.Dto.Order;
+using Model.Dto.Rate;
+using Model.Dto.Rating;
 using Model.Dto.Users;
+using Model.Dto.Vehicle;
 using Model.Requests;
+using Model.Requests.Favorites;
+using Model.Requests.Orders;
+using Model.Requests.Rate;
+using Model.Requests.Rating;
+using Model.Requests.Vehicle;
 
 namespace Model.Others
 {
@@ -41,7 +51,33 @@ namespace Model.Others
             CreateMap<NotificationDto, Notification>().ReverseMap();
             CreateMap<NotificationInsertRequest, Notification>().ReverseMap();
 
-           
+            //Favorites
+            CreateMap<FavoritesDto, Favorite>().ReverseMap();
+            CreateMap<FavoritesInsertRequest, Favorite>().ReverseMap();
+
+            //Order
+            CreateMap<OrderDto, Order>().ReverseMap();
+            CreateMap<OrderInsertRequest, Order>().ReverseMap();
+            CreateMap<OrderUpsertRequest, Order>().ReverseMap();
+
+            //Rate
+            CreateMap<RateDto, Rate>().ReverseMap();
+            CreateMap<RateInsertRequest, Rate>().ReverseMap();
+
+            //Rating
+            CreateMap<RatingDto, Rating>().ReverseMap();
+            CreateMap<RatingInsertRequest, Rating>().ReverseMap();
+
+            //Vehicle
+            CreateMap<VehicleDto, Vehicle>().ReverseMap();
+            CreateMap<VehicleInsertRequest, Vehicle>().ReverseMap();
+            CreateMap<VehicleUpsertRequest, Vehicle>().ReverseMap();
+
+            //Vehicle Type
+            CreateMap<VehicleTypeDto, VehicleType>().ReverseMap();
+            CreateMap<VehicleTypeInsertRequest, VehicleType>().ReverseMap();
+
+
         }
     }
 }
