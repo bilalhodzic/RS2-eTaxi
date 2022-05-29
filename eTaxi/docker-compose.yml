@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  rezervisi:
-    image: ${DOCKER_REGISTRY-}rezervisi
+  etaxi:
+    image: ${DOCKER_REGISTRY-}eTaxi
     build:
       context: .
-      dockerfile: Rezervisi/Dockerfile
+      dockerfile: eTaxi/Dockerfile
