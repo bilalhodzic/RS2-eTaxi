@@ -10,8 +10,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(eTaxiDbContext))]
-    [Migration("20220507094753_Favorite")]
-    partial class Favorite
+    [Migration("20220628170404_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -125,14 +125,14 @@ namespace Persistence.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "58abde35-efdd-421b-9c90-70fd5d915593",
+                            ConcurrencyStamp = "768b9944-4fe2-4c3c-ab9d-289eea52c2e5",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             IsActive = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPvuKkxvu5Xn/oA42WAVtUITNW9KYZvNRBQ0rBhp6q1qJK7e+FlVhyKeX6AQRsSPPA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELvXWRUW0bxjwsLMvUB326M23krZXAWDGzABeofiB5r3nb6Gt9KSCi15JUDWr309ow==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SecurityStamp = "",
@@ -140,13 +140,13 @@ namespace Persistence.Migrations
                             UserCreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "Admin",
                             UserType = "Admin",
-                            VerifiedAccount = false
+                            VerifiedAccount = true
                         },
                         new
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b96faa45-603a-45e3-8010-2661698ec4ab",
+                            ConcurrencyStamp = "fe8e944f-0034-4d04-bf75-711b80bbf651",
                             Email = "m.fazlic4@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Vlasnik",
@@ -155,11 +155,11 @@ namespace Persistence.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "M.FAZLIC4@GMAIL.COM",
                             NormalizedUserName = "FAZLA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFifCkcxt9cp9FBPo8WhdTTazRnAcDyzkxrycgTs3ObwsCx4944yFcoQdmyhBVRkLg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAzVlxIEkvEQgd/LxkQAR8yKuYxhgO9A7etvwpcuezqt5oIEGj3XVkBMK6NWVSL8fw==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             TwoFactorEnabled = false,
-                            UserCreatedTime = new DateTime(2022, 5, 7, 11, 47, 52, 899, DateTimeKind.Local).AddTicks(9621),
+                            UserCreatedTime = new DateTime(2022, 6, 28, 19, 4, 2, 739, DateTimeKind.Local).AddTicks(8563),
                             UserName = "fazla",
                             UserType = "Owner",
                             VerifiedAccount = false
@@ -168,19 +168,19 @@ namespace Persistence.Migrations
                         {
                             Id = 4,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "21a7dc49-0c5f-49c3-87f4-11b6895a858f",
+                            ConcurrencyStamp = "c3df0582-99fa-4bfd-a581-9096af76167b",
                             Email = "company@company.com",
                             EmailConfirmed = true,
                             IsActive = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "COMPANY@COMPANY.COM",
                             NormalizedUserName = "COMPANY",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFfWMIX+gs2Swi1FXFw+tOJVZ82+a7+aa5mEVnG0lSLem+G5x7loDBNMQI7wkApmKA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBeFu918MVxf6otPOyQUqaHyf8kTaUT3UT9CbP+c+LK3O7Nt1CHIeS5bEY3KrHtzfg==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
-                            UserCreatedTime = new DateTime(2022, 5, 7, 11, 47, 52, 907, DateTimeKind.Local).AddTicks(2354),
+                            UserCreatedTime = new DateTime(2022, 6, 28, 19, 4, 2, 777, DateTimeKind.Local).AddTicks(8256),
                             UserName = "Taksista",
                             UserType = "Worker",
                             VerifiedAccount = false
@@ -189,14 +189,14 @@ namespace Persistence.Migrations
                         {
                             Id = 5,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "874485d6-4c9c-43b1-9442-f3c369ad0dc1",
+                            ConcurrencyStamp = "32524001-c3b3-42ac-8765-c93e097fe48f",
                             Email = "user@user.com",
                             EmailConfirmed = true,
                             IsActive = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@USER.COM",
                             NormalizedUserName = "USER@USER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIyw9xxAyl1qw2UGXetRcHMZSF30zNRGAXQimERZquN27GTGAEJwrxkJELhQ28rhnA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJpfNoq5lqvjE4wXozgyKE8l+aDfRkyTZO++i78TsW28m70xMlP7VhPpeGd01rWtug==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SecurityStamp = "",
@@ -472,6 +472,9 @@ namespace Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("FileId")
+                        .HasColumnType("int");
+
                     b.Property<int>("NumberOfSeats")
                         .HasColumnType("int");
 
@@ -479,6 +482,8 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("VehicleTypeId");
+
+                    b.HasIndex("FileId");
 
                     b.ToTable("VehicleTypes");
                 });
@@ -515,28 +520,28 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "6fd97032-6f09-412b-9e40-2c2bb0550b8e",
+                            ConcurrencyStamp = "16f09109-a7a8-4a3f-bf83-84735ecd6c7d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "11023fb3-4b95-4bed-879a-73c411b034d3",
+                            ConcurrencyStamp = "aecbec9b-3f9b-4302-b4ed-339c6260ebd5",
                             Name = "Owner",
                             NormalizedName = "OWNER"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "20076af1-a24a-40dd-b17d-405324a6e74b",
+                            ConcurrencyStamp = "b26aeb23-6f8a-4b73-8aae-0fb671076209",
                             Name = "Worker",
                             NormalizedName = "WORKER"
                         },
                         new
                         {
                             Id = 5,
-                            ConcurrencyStamp = "8add544f-9ca9-4112-88d5-7aa6430b9c35",
+                            ConcurrencyStamp = "7f72409e-cc6d-4a78-8ab5-4b1bafc64a26",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -807,6 +812,17 @@ namespace Persistence.Migrations
                     b.Navigation("Type");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Domain.VehicleType", b =>
+                {
+                    b.HasOne("Domain.File", "File")
+                        .WithMany()
+                        .HasForeignKey("FileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("File");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

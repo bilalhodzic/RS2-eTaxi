@@ -28,8 +28,9 @@ namespace Persistence
                 PasswordHash = hasher.HashPassword(null, "qweasd"),
                 SecurityStamp = string.Empty,
                 UserType = UserRoles.Admin,
-                IsActive = true
-            });
+                IsActive = true,
+                VerifiedAccount = true
+            }); 
             modelBuilder.Entity<ApplicationUser>().HasData(new ApplicationUser
             {
                 Id = 2,

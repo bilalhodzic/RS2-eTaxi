@@ -16,14 +16,12 @@ namespace Rezervisi.Controllers
             _service = service;
         }
 
-        [Authorize]
         [HttpGet]
         public async virtual Task<IEnumerable<T>> Get([FromQuery] Tsearch search = null)
         {
             return await _service.Get(search);
         }
 
-        [Authorize]
         [HttpGet("{id}")]
         public  virtual Task<T> GetById(int id)
         {

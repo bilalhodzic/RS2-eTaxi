@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistence.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,20 +45,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "VehicleTypes",
-                columns: table => new
-                {
-                    VehicleTypeId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NumberOfSeats = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_VehicleTypes", x => x.VehicleTypeId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -76,7 +62,7 @@ namespace Persistence.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -139,7 +125,7 @@ namespace Persistence.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -159,7 +145,7 @@ namespace Persistence.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -210,20 +196,20 @@ namespace Persistence.Migrations
                 name: "Favorites",
                 columns: table => new
                 {
-                    FavoritesId = table.Column<int>(type: "int", nullable: false)
+                    FavoriteId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     CompanyId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Favorites", x => x.FavoritesId);
+                    table.PrimaryKey("PK_Favorites", x => x.FavoriteId);
                     table.ForeignKey(
                         name: "FK_Favorites_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -246,7 +232,7 @@ namespace Persistence.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -287,6 +273,27 @@ namespace Persistence.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "VehicleTypes",
+                columns: table => new
+                {
+                    VehicleTypeId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NumberOfSeats = table.Column<int>(type: "int", nullable: false),
+                    FileId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VehicleTypes", x => x.VehicleTypeId);
+                    table.ForeignKey(
+                        name: "FK_VehicleTypes_Files_FileId",
+                        column: x => x.FileId,
+                        principalTable: "Files",
+                        principalColumn: "FileId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -363,19 +370,19 @@ namespace Persistence.Migrations
                         column: x => x.EndLocationId,
                         principalTable: "Locations",
                         principalColumn: "LocationId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Orders_Locations_StartLocationId",
                         column: x => x.StartLocationId,
                         principalTable: "Locations",
                         principalColumn: "LocationId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Orders_Vehicles_VehicleId",
                         column: x => x.VehicleId,
                         principalTable: "Vehicles",
                         principalColumn: "VehicleId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -418,10 +425,10 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "a0961e94-356a-449e-8def-942678b0649d", "Admin", "ADMIN" },
-                    { 2, "4c8dee7f-ce63-492c-930d-b3a13185bd09", "Owner", "OWNER" },
-                    { 4, "dad71f22-c30d-4edc-b7a1-799e7a9c8398", "Worker", "WORKER" },
-                    { 5, "fbb9c20a-658d-4679-ab0b-73c3e9bcf9a5", "User", "USER" }
+                    { 1, "16f09109-a7a8-4a3f-bf83-84735ecd6c7d", "Admin", "ADMIN" },
+                    { 2, "aecbec9b-3f9b-4302-b4ed-339c6260ebd5", "Owner", "OWNER" },
+                    { 4, "b26aeb23-6f8a-4b73-8aae-0fb671076209", "Worker", "WORKER" },
+                    { 5, "7f72409e-cc6d-4a78-8ab5-4b1bafc64a26", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -429,10 +436,10 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "IsActive", "LastName", "LocationId", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Pin", "RefreshToken", "RefreshTokenExpiryTime", "SecurityStamp", "TwoFactorEnabled", "UserCreatedTime", "UserName", "UserType", "VerifiedAccount" },
                 values: new object[,]
                 {
-                    { 1, 0, "87ce33e1-2a4e-4638-b763-9ea292887289", "admin@admin.com", true, null, true, null, null, false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEI7tA8I0iTkIH3CpqLM1fPXltVUxXQa9aL7gHVAsIwa6PSK6KywTFqmdPiU0r0jHDg==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Admin", "Admin", false },
-                    { 2, 0, "b9485347-fd50-4abd-b851-456192a463a5", "m.fazlic4@gmail.com", true, "Vlasnik", true, "Fazlić", null, false, null, "M.FAZLIC4@GMAIL.COM", "FAZLA", "AQAAAAEAACcQAAAAEAwi+zyUKD0KR1bKsDaPwL6Ly1AaqZGy6/tiDLhtX9Csny5azYyLptyUPkHTMGirkQ==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, new DateTime(2022, 5, 7, 9, 4, 30, 16, DateTimeKind.Local).AddTicks(6950), "fazla", "Owner", false },
-                    { 4, 0, "1b499bdd-c5e3-4242-a363-d131206e7855", "company@company.com", true, null, true, null, null, false, null, "COMPANY@COMPANY.COM", "COMPANY", "AQAAAAEAACcQAAAAEBtHjCC5v2oKz2DnGiQS5oIm9dskPyfAuAeIPGRfc5YOoMEI0fcRo7Syab+31ezNFw==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", false, new DateTime(2022, 5, 7, 9, 4, 30, 23, DateTimeKind.Local).AddTicks(6015), "Taksista", "Worker", false },
-                    { 5, 0, "766d2673-4c0f-4bd8-90cd-dfbd0a72f39b", "user@user.com", true, null, true, null, null, false, null, "USER@USER.COM", "USER@USER.COM", "AQAAAAEAACcQAAAAEPmlizdLKj2aeUXAKmiy/aZC0xAg8wvoApKiLZZi3TKkk7LFIsZdLAffKm5CB6fjgw==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Korisnik", "User", false }
+                    { 1, 0, "768b9944-4fe2-4c3c-ab9d-289eea52c2e5", "admin@admin.com", true, null, true, null, null, false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAELvXWRUW0bxjwsLMvUB326M23krZXAWDGzABeofiB5r3nb6Gt9KSCi15JUDWr309ow==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Admin", "Admin", true },
+                    { 2, 0, "fe8e944f-0034-4d04-bf75-711b80bbf651", "m.fazlic4@gmail.com", true, "Vlasnik", true, "Fazlić", null, false, null, "M.FAZLIC4@GMAIL.COM", "FAZLA", "AQAAAAEAACcQAAAAEAzVlxIEkvEQgd/LxkQAR8yKuYxhgO9A7etvwpcuezqt5oIEGj3XVkBMK6NWVSL8fw==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, new DateTime(2022, 6, 28, 19, 4, 2, 739, DateTimeKind.Local).AddTicks(8563), "fazla", "Owner", false },
+                    { 4, 0, "c3df0582-99fa-4bfd-a581-9096af76167b", "company@company.com", true, null, true, null, null, false, null, "COMPANY@COMPANY.COM", "COMPANY", "AQAAAAEAACcQAAAAEBeFu918MVxf6otPOyQUqaHyf8kTaUT3UT9CbP+c+LK3O7Nt1CHIeS5bEY3KrHtzfg==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", false, new DateTime(2022, 6, 28, 19, 4, 2, 777, DateTimeKind.Local).AddTicks(8256), "Taksista", "Worker", false },
+                    { 5, 0, "32524001-c3b3-42ac-8765-c93e097fe48f", "user@user.com", true, null, true, null, null, false, null, "USER@USER.COM", "USER@USER.COM", "AQAAAAEAACcQAAAAEJpfNoq5lqvjE4wXozgyKE8l+aDfRkyTZO++i78TsW28m70xMlP7VhPpeGd01rWtug==", null, false, null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Korisnik", "User", false }
                 });
 
             migrationBuilder.InsertData(
@@ -564,6 +571,11 @@ namespace Persistence.Migrations
                 name: "IX_Vehicles_UserId",
                 table: "Vehicles",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VehicleTypes_FileId",
+                table: "VehicleTypes",
+                column: "FileId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -587,9 +599,6 @@ namespace Persistence.Migrations
                 name: "Favorites");
 
             migrationBuilder.DropTable(
-                name: "Files");
-
-            migrationBuilder.DropTable(
                 name: "Notifications");
 
             migrationBuilder.DropTable(
@@ -608,10 +617,13 @@ namespace Persistence.Migrations
                 name: "Vehicles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "VehicleTypes");
 
             migrationBuilder.DropTable(
-                name: "VehicleTypes");
+                name: "Files");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Locations");

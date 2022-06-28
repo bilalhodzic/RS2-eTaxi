@@ -10,8 +10,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(eTaxiDbContext))]
-    [Migration("20220507070430_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220628201546_updated-vehicle-class")]
+    partial class updatedvehicleclass
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -125,14 +125,14 @@ namespace Persistence.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "87ce33e1-2a4e-4638-b763-9ea292887289",
+                            ConcurrencyStamp = "0f295ea7-4b27-4898-9562-c0988b9c249d",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             IsActive = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI7tA8I0iTkIH3CpqLM1fPXltVUxXQa9aL7gHVAsIwa6PSK6KywTFqmdPiU0r0jHDg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKYkBRiL8RBq3DzObJDg2pq4/IUp5Onl1dB2/gDFhMzd3YL6FRztgMZpLYenQC/lVQ==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SecurityStamp = "",
@@ -140,13 +140,13 @@ namespace Persistence.Migrations
                             UserCreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "Admin",
                             UserType = "Admin",
-                            VerifiedAccount = false
+                            VerifiedAccount = true
                         },
                         new
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b9485347-fd50-4abd-b851-456192a463a5",
+                            ConcurrencyStamp = "45441713-324e-4fac-8daa-21c35db31a3f",
                             Email = "m.fazlic4@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Vlasnik",
@@ -155,11 +155,11 @@ namespace Persistence.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "M.FAZLIC4@GMAIL.COM",
                             NormalizedUserName = "FAZLA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAwi+zyUKD0KR1bKsDaPwL6Ly1AaqZGy6/tiDLhtX9Csny5azYyLptyUPkHTMGirkQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENJBJiVQuAO1jUv0WH76/0y/FAkMz/YBcIIEZSkGUpQAMMJxw0tVVF1+G8Haoxy9lQ==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             TwoFactorEnabled = false,
-                            UserCreatedTime = new DateTime(2022, 5, 7, 9, 4, 30, 16, DateTimeKind.Local).AddTicks(6950),
+                            UserCreatedTime = new DateTime(2022, 6, 28, 22, 15, 45, 816, DateTimeKind.Local).AddTicks(2131),
                             UserName = "fazla",
                             UserType = "Owner",
                             VerifiedAccount = false
@@ -168,19 +168,19 @@ namespace Persistence.Migrations
                         {
                             Id = 4,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1b499bdd-c5e3-4242-a363-d131206e7855",
+                            ConcurrencyStamp = "3934d696-92ab-4501-9102-a97bef262db3",
                             Email = "company@company.com",
                             EmailConfirmed = true,
                             IsActive = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "COMPANY@COMPANY.COM",
                             NormalizedUserName = "COMPANY",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBtHjCC5v2oKz2DnGiQS5oIm9dskPyfAuAeIPGRfc5YOoMEI0fcRo7Syab+31ezNFw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEArc2TAxXpHAFoobdQh/gwnXIgqKkx00VLJspaJrMv01rCxQtYUqcmgMGyOZ14xs5Q==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
-                            UserCreatedTime = new DateTime(2022, 5, 7, 9, 4, 30, 23, DateTimeKind.Local).AddTicks(6015),
+                            UserCreatedTime = new DateTime(2022, 6, 28, 22, 15, 45, 824, DateTimeKind.Local).AddTicks(2976),
                             UserName = "Taksista",
                             UserType = "Worker",
                             VerifiedAccount = false
@@ -189,14 +189,14 @@ namespace Persistence.Migrations
                         {
                             Id = 5,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "766d2673-4c0f-4bd8-90cd-dfbd0a72f39b",
+                            ConcurrencyStamp = "29a0d6f3-6fa3-470f-b23f-3aa74cf663db",
                             Email = "user@user.com",
                             EmailConfirmed = true,
                             IsActive = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@USER.COM",
                             NormalizedUserName = "USER@USER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPmlizdLKj2aeUXAKmiy/aZC0xAg8wvoApKiLZZi3TKkk7LFIsZdLAffKm5CB6fjgw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJzOFXU7lTQ16Ba9JnhOCm7HQ2GOXFTzvmffJwzzlf2JyqLHe+4yVq14K2BLebho7g==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SecurityStamp = "",
@@ -208,9 +208,9 @@ namespace Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Favorites", b =>
+            modelBuilder.Entity("Domain.Favorite", b =>
                 {
-                    b.Property<int>("FavoritesId")
+                    b.Property<int>("FavoriteId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -221,7 +221,7 @@ namespace Persistence.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("FavoritesId");
+                    b.HasKey("FavoriteId");
 
                     b.HasIndex("UserId");
 
@@ -252,9 +252,14 @@ namespace Persistence.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("VehicleId")
+                        .HasColumnType("int");
+
                     b.HasKey("FileId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("VehicleId");
 
                     b.ToTable("Files");
                 });
@@ -427,8 +432,17 @@ namespace Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("AirBag")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("AirCondition")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Brand")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
@@ -436,16 +450,28 @@ namespace Persistence.Migrations
                     b.Property<int>("CurrentLocationId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FuelType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("KmTraveled")
                         .HasColumnType("float");
 
                     b.Property<string>("LicenceNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PricePerKm")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Transmission")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("TypeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserDriverId")
+                    b.Property<int?>("UserDriverId")
                         .HasColumnType("int");
 
                     b.Property<int?>("UserId")
@@ -472,6 +498,9 @@ namespace Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("FileId")
+                        .HasColumnType("int");
+
                     b.Property<int>("NumberOfSeats")
                         .HasColumnType("int");
 
@@ -479,6 +508,8 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("VehicleTypeId");
+
+                    b.HasIndex("FileId");
 
                     b.ToTable("VehicleTypes");
                 });
@@ -515,28 +546,28 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "a0961e94-356a-449e-8def-942678b0649d",
+                            ConcurrencyStamp = "e344fb04-ad1d-42c3-8eea-ea31ed4de0ca",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "4c8dee7f-ce63-492c-930d-b3a13185bd09",
+                            ConcurrencyStamp = "a2c61744-3ab5-463a-bbaa-e8a8b9118b90",
                             Name = "Owner",
                             NormalizedName = "OWNER"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "dad71f22-c30d-4edc-b7a1-799e7a9c8398",
+                            ConcurrencyStamp = "8198fb29-dc6a-4058-a91f-1fee622f3828",
                             Name = "Worker",
                             NormalizedName = "WORKER"
                         },
                         new
                         {
                             Id = 5,
-                            ConcurrencyStamp = "fbb9c20a-658d-4679-ab0b-73c3e9bcf9a5",
+                            ConcurrencyStamp = "c43f457d-295f-42a3-b731-80e71aa7596d",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -672,7 +703,7 @@ namespace Persistence.Migrations
                         .HasForeignKey("LocationId");
                 });
 
-            modelBuilder.Entity("Domain.Favorites", b =>
+            modelBuilder.Entity("Domain.Favorite", b =>
                 {
                     b.HasOne("Domain.ApplicationUser", "User")
                         .WithMany()
@@ -690,6 +721,10 @@ namespace Persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Domain.Vehicle", null)
+                        .WithMany("Files")
+                        .HasForeignKey("VehicleId");
 
                     b.Navigation("User");
                 });
@@ -809,6 +844,17 @@ namespace Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.VehicleType", b =>
+                {
+                    b.HasOne("Domain.File", "File")
+                        .WithMany()
+                        .HasForeignKey("FileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("File");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
@@ -868,6 +914,11 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Location", b =>
                 {
                     b.Navigation("ApplicationUsers");
+                });
+
+            modelBuilder.Entity("Domain.Vehicle", b =>
+                {
+                    b.Navigation("Files");
                 });
 #pragma warning restore 612, 618
         }
