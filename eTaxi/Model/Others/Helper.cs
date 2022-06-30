@@ -70,7 +70,8 @@ namespace Model.Others
                 }
                 catch (Exception)
                 {
-                    throw;
+                    // throw;
+                    Console.WriteLine("File nije pronadjen u bazi");
                 }
             }
         }

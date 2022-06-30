@@ -25,6 +25,7 @@ namespace Persistence
         public virtual DbSet<Rating> Ratings { get; set; }
         public virtual DbSet<Vehicle> Vehicles { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
+        public virtual DbSet<Hub> Hubs { get; set; }
 
 
 

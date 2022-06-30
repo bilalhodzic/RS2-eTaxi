@@ -46,6 +46,9 @@ using Model.Dto.Vehicle;
 using Model.Requests.Vehicle;
 using Application.Vehicles;
 using Application.VehicleTypes;
+using Model.Dto.Hub;
+using Application.Hubs;
+using Model.Requests.Hub;
 
 namespace SpiderJob
 {
@@ -205,7 +208,7 @@ namespace SpiderJob
             services.AddScoped<ICRUD<RatingDto, RatingSearchRequest, RatingInsertRequest, object>, Ratings>();
             services.AddScoped<ICRUD<VehicleDto, VehicleSearchRequest, VehicleInsertRequest, VehicleUpsertRequest>, Vehicles>();
             services.AddScoped<ICRUD<VehicleTypeDto, VehicleTypeSearchRequest, VehicleTypeInsertRequest, object>, VehicleTypes>();
-
+            services.AddScoped<ICRUD<HubDto, object, HubInsertRequest, object>, Hubs>();
 
 
 

@@ -14,6 +14,7 @@ namespace Application.Files
             {
                 throw new UserException("Nije pronađeno");
             }
+
             Helper.RemoveImage(entity.FileName, entity.Url);
             if (entity.Type != Messages.HeaderImage && entity.Type != Messages.ProfileImage && entity.Type != Messages.SalonImage)
             {

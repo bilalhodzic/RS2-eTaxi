@@ -12,6 +12,7 @@ namespace Domain
         public string FileName { get; set; }
         public string OriginalName { get; set; }
         public string Type { get; set; }
+        public int? VehicleId { get; set; }
 
         public virtual ApplicationUser User { get; set; }
     }

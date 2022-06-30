@@ -25,7 +25,7 @@ namespace Application.VehicleTypes
         {
             try
             {
-                return await _context.Set<VehicleType>().Select(x => new VehicleTypeDto { File = x.File.Url, NumberOfSeats = x.NumberOfSeats, VehicleTypeId = x.VehicleTypeId, Type=x.Type }).ToListAsync();//.Include(x=>x.Icon.Url).ToListAsync();
+                return await _context.Set<VehicleType>().Select(x => new VehicleTypeDto { File = x.File.Url, NumberOfSeats = x.NumberOfSeats, VehicleTypeId = x.VehicleTypeId, Type=x.Type }).ToListAsync();
             }
             catch
             {

@@ -3,6 +3,7 @@ using Domain;
 using Model.Dto;
 using Model.Dto.Favorites;
 using Model.Dto.Files;
+using Model.Dto.Hub;
 using Model.Dto.Location;
 using Model.Dto.Order;
 using Model.Dto.Rate;
@@ -11,6 +12,7 @@ using Model.Dto.Users;
 using Model.Dto.Vehicle;
 using Model.Requests;
 using Model.Requests.Favorites;
+using Model.Requests.Hub;
 using Model.Requests.Orders;
 using Model.Requests.Rate;
 using Model.Requests.Rating;
@@ -76,6 +78,11 @@ namespace Model.Others
             //Vehicle Type
             CreateMap<VehicleTypeDto, VehicleType>().ReverseMap();
             CreateMap<VehicleTypeInsertRequest, VehicleType>().ReverseMap();
+
+            //hub
+            CreateMap<HubDto, Hub>().ReverseMap();
+            CreateMap<HubInsertRequest, Hub>().ReverseMap();
+
 
 
         }
